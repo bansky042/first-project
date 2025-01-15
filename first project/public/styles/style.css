@@ -1,0 +1,976 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    
+    
+}
+/**/
+@media only screen and (min-width:320px) and (max-width:600px) {
+   body{
+    font-size: 20px !important;
+    min-width: 100% !important;
+   }
+/*navbar*/
+   .navbar{
+    width: 560px !important;
+   }
+
+    .hambuger{
+        display: block !important;
+       margin-left: -20px !important;
+       margin-top: 10px !important;
+       border: none;
+       background-color: transparent;
+       cursor: pointer;
+    }
+
+    .hambuger span{
+        width: 30px !important;
+        height: 1px !important;
+        background-color: #fff !important;
+        margin-bottom: 5px;
+        transition: 0.3s;
+    }
+    
+    .hambuger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hambuger.active span:nth-child(1){
+        transform: translateY(12px) rotate(45deg);
+        
+    }
+
+    .hambuger.active span:nth-child(3){
+        transform: translate(-1px) rotate(-45deg);
+    }
+
+    .menu{
+        position: fixed;
+        right: 100%;
+        top: 60px;
+        flex-direction: column;
+        background-color:rgb(38, 38, 40);
+        width: 100%;
+        height: 100% !important;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .menu.active{
+        right: 0;  
+    }
+
+    .menu li{
+        margin: 2.5rem 0;
+    }
+
+    .nav-link{
+        color: #fff;
+        padding: 15px;
+        text-align: justify;
+        transition: 0.5s !important;
+    }
+}
+
+/*main screen*/
+
+/*navbar section*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    padding: 10px 30px;
+    background-color: rgb(38, 38, 40);
+    top: 0;
+    z-index: 100;
+    width:100%;
+}
+
+.logo{
+    width: 20%;
+    height: 24px;
+    padding: 15px;
+}
+.menu{
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+}
+
+header{
+
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link{
+    padding: 10px;
+    color: white;
+    transition: 0.5s;
+    text-decoration: none;
+    position: relative;
+    margin-left: 40px;
+}
+
+.menu li svg:hover{
+    color: black;
+}
+
+.nav-link a{
+    position: absolute;
+    top: 30px;
+}
+.nav-link button{
+    position: absolute;
+    top: 20px;
+}
+
+header h1{
+    color: white;
+}
+
+.nav-link:hover{
+    background-color:white;
+    color: black;
+    
+}
+
+.hambuger{
+    position: absolute;
+    top: 17px;
+    left:540px;
+    display: none;
+    background-color: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30px;
+    height: 20px;
+    border-radius: 0%;
+}
+
+.hambuger span{
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+}
+.menu li button{
+    background-color: white;
+    margin-bottom: -5px;
+    padding: 5px 25px;
+    border: none;
+    color: black;
+    
+   
+}
+
+
+/*firstsection*/
+
+.firstsection{
+    background-image: linear-gradient(to right,rgba(106, 0, 104, 0.554),  rgba(192, 70, 5, 0.473)),url(../images/gym13.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    min-height: 620px;
+    position: relative;
+}
+
+.text-firstsection{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+}
+
+.text-firstsection h1{
+    color: white;
+    font-size: 75px;
+    font-family: sans-serif;
+}
+.text-firstsection h2{
+    color: white;
+    font-size: 50px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.button-firstsection{
+    position: absolute;
+    top: 78%;
+    left: 48%;
+}
+
+.button-firstsection button {
+    background-color: rgb(20, 148, 144);
+    
+    padding: 15px 24px;
+    border: none;
+}
+.button-firstsection button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*secondsection*/
+.secondsection{
+width: auto;
+height: 450px;
+display: flex;
+margin-top: 40px;
+}
+
+.secondsection-left{
+    width: 50%;
+    height: auto;
+}
+
+.secondsection-right{
+    width: 50%;
+    height: auto;
+    
+}
+
+.secondsection-right p{
+    padding: 0px 80px;
+    line-height: 27px;
+}
+
+
+.text-secondsection-right-heading h1, h3, p{
+text-align: center;
+}
+
+/*thirdsection*/
+.thirdsection{
+    display: flex;
+    height: auto;
+    margin-top: -80px;
+    
+}
+
+.thirdsection-1{
+    background-image: linear-gradient(rgba(106, 0, 104, 0.554),  rgba(192, 70, 5, 0.473)),url(../images/gym1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25%;
+    min-height: 640px;
+   
+}
+
+.thirdsection-2{
+    background-image: linear-gradient(  rgba(192, 70, 5, 0.473), rgba(106, 0, 104, 0.554)),url(../images/gym2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25%;
+    min-height: 640px;
+    margin-left: 5px;
+}
+
+.thirdsection-3{
+    background-image: linear-gradient(rgba(106, 0, 104, 0.554),  rgba(192, 70, 5, 0.473)),url(../images/gym3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25%;
+    min-height: 640px;
+    margin-left: 5px;
+}
+
+.thirdsection-4{
+    background-image: linear-gradient(   rgba(192, 70, 5, 0.473), rgba(106, 0, 104, 0.554)),url(../images/gym4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25%;
+    min-height: 640px;
+    margin-left: 5px;
+}
+
+/*fourthsection*/
+.fourthsection{
+    display: flex;
+    height: auto;
+}
+.fourthsection-left{
+    width: 75%;
+}
+
+.fourthsection-left-heading{
+    margin: 20px 150px;
+    text-align: center;
+}
+
+.fourthsection-left-heading h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: rgb(72, 71, 71);
+}
+
+.fourthsection-left-heading p{
+    line-height: 35px;
+    color: rgb(131, 129, 129);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.fourthsection-left-body{
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fourthsection-left-body-card{
+    border: none;
+    width: 220px;
+    text-align: center;
+    margin:20px 30px 0px 70px;
+    position: relative;
+    
+}
+
+.fourthsection-left-body-card-icon{
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: auto;
+   padding-left: 70px;
+   
+}
+
+.fourthsection-left-body-card-text h2{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+    color: rgb(72, 71, 71);
+    
+}
+
+.fourthsection-left-body-card-text p{
+    color: rgb(131, 129, 129);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 30px;
+}
+
+.fourthsection-right{
+    background-image: linear-gradient(  rgba(118, 43, 2, 0.473),  rgba(192, 70, 5, 0.473)),url(../images/gym5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25%;
+    min-height: 950px;
+    margin-left: 5px;
+}
+/*fifthsection*/
+.fifthsection{
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+}
+.fifthsection-title{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.fifthsection-title h1{
+    color:rgb(72, 71, 71);
+    font-weight: 600;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.fifthsection-team{
+    display: flex;
+    width: 100%;
+    
+}
+
+.fifthsection-player{
+    width: 24%;
+    height: auto;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+
+.fifthsection-text{
+    width: 80%;
+    height: 30px;
+    background-color: rgb(225, 227, 230);
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 90px;
+    padding:30px;
+    margin-left: 35px;
+    
+
+}
+.fifthsection-text h3{
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: -20px;
+}
+.fifthsection-text p{
+    font-family: monospace;
+}
+
+/*sixthsection*/
+.sixthsection{
+    margin-top: 30px;
+    display: flex;
+    width: auto;
+    height: 900px;
+    background-image: linear-gradient(to right,rgba(106, 0, 104, 0.554), rgba(192, 70, 5, 0.473)),url(../images/gym16.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.sixthsection-left{
+    width: 50%;
+    margin: 70px 15px 0px 0px;
+
+}
+
+.sixthsection-left-single{
+    margin-left: 150px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.sixthsection-left-single svg{
+    background-color: #fff;
+    color: rgb(14, 209, 192);
+    border-radius: 50%;
+}
+.sixthsection-extra{
+    font-size: 20px;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    top: 100px;
+    color:#fff;
+    
+}
+
+.sixthsection-left-single p{
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 120px;
+   
+}
+
+.sixthsection-right{
+    width: 50%;
+    
+}
+.sixthsection-right p{
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    color: #fff;
+    margin: 200px 400px 200px 100px;
+    line-height: 90px;
+}
+
+.sixthsection-button{
+    background-color: rgb(14, 209, 192);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    margin-left: 250px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.sixthsection-button:hover{
+    background-color: rgba(192, 70, 5, 0.473);
+    color: #fff;
+}
+
+/*seventhsection*/
+
+.seventhsection{
+    display: flex;
+    width: auto;
+    height: 800px;
+    margin: 50px 20px 30px 20px;
+    
+}
+
+.seventhsection-single{
+    display: block;
+    width: 25%;
+    text-align: center;
+    margin-right: 50px;
+
+}
+.seventhsection-single-image img{
+    border-radius: 50%;
+    border: 1px white solid;
+    margin-bottom: 30px;
+}
+
+.seventhsection-single-text h3{
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    color: rgb(14, 209, 192);
+
+}
+
+.seventhsection-single-text p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+/*eightsection*/
+.eightsection{
+    display: flex;
+    margin: 50px 200px;
+}
+.eightsection-card{
+    border: 2px rgb(0, 102, 94) solid;
+    border-radius: 15px;
+    width: 320px;
+    height: fit-content;
+    margin-right: 15px;
+}
+.eightsection-card-upper{
+    display: block;
+    margin: 20px 50px 10px 50px;
+    text-align: center;
+}
+
+.eightsection-card-upper h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 30px 0px;
+    color: rgb(0, 102, 94) ;
+}
+.eightsection-card-upper h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: rgb(231, 115, 6) ;
+}
+.eightsection-card-upper p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 40px;
+    color: rgb(0, 102, 94) ;
+}
+
+.eightsection-card-upper button{
+    background-color: rgb(14, 209, 192);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 70px;
+    margin-bottom: 20px;
+}
+
+.eightsection-card-lower{
+    background-color: rgb(14, 209, 192);
+    height: 150px;
+    border-radius: 0px 0px 12px 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px rgb(0, 102, 94)  solid;
+}
+.eightsection-card-lower p{
+    color: #e8e8e8;
+}
+
+/*ninthsection*/
+
+.ninthsection{
+    display: flex;
+    margin: 150px 150px;
+}
+
+.ninthsection-left{
+    display: block;
+    width: 30%;
+}
+.ninthsection-left h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(46, 46, 46);
+    margin-bottom: 250px;
+    margin-right: 230px;
+    
+}
+.ninthsection-left button{
+    background-color: rgb(14, 209, 192);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 30px;
+}
+.ninthsection-right{
+    width: 70%;
+    height: 500px;
+    text-align: left;
+    display: flex;
+    
+}
+
+.ninthsection-right ul{
+    text-wrap: wrap;
+    margin-left: 15px;
+}
+
+.ninthsection-right ul li{
+    margin-bottom: 50px;
+    text-wrap: wrap;
+    text-align: left;
+    font-size: 18px;
+    color: rgb(108, 107, 107);
+    
+}
+
+.tenthsection{
+    background-image: linear-gradient(to right,rgba(106, 0, 104, 0.554), rgba(192, 70, 5, 0.473)),url(../images/gym18.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 600px;
+    position: relative;
+    margin-bottom: -120px;
+}
+
+.tenthsection h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+    position: absolute;
+    left: 21%;
+    top: 100px;
+    color: white;
+}
+
+.tenthsection h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    position: absolute;
+    left: 25%;
+    top: 300px;
+    color: white;
+    
+}
+
+
+/*footer*/
+footer{
+    background-color: rgb(56, 56, 56);
+    height: 225px;
+    width: auto;
+
+}
+.footer-left{
+    width: 50%;
+    color: white;
+  position: relative;
+    
+}
+
+
+.footer-left h4{
+   position: absolute;
+   top:20px;
+   right: 80px;
+}
+.footer-left-p{
+    position: absolute;
+    top: 70px;
+    right: 50px;
+
+}
+
+.footer-left-icon{
+    position: absolute;
+    top: 90px;
+    right: 50px;
+    display: flex;
+    
+}
+
+.footer-left-icon svg{
+    padding-left: 20px;
+}
+
+.footer-right{
+    width: 50%;
+    margin-left: 450px;
+    padding-top: 65px;
+    color: white;
+
+}
+.footer-right p a{
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.footer-right p a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+
+/*login page*/
+.container{
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+.container-text{
+    margin-top: 100px;
+    margin-right: 30px;
+}
+
+.container-text h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    
+}
+
+
+.container2{
+    width: 500px;
+    height: 400px;
+   
+    position: absolute;
+    top: 240%;
+    left: 31%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-group{
+    display: block;
+    width: 80px;
+    margin-right: 20px;  
+    margin-top: 30px;
+}
+
+.form-control{
+    height: 25px;
+    width: 430px;
+    margin-left: 20px;
+    border: none;
+    border-bottom: 2px black solid;
+    padding-left: 8px;
+    transition: 0.4s;
+}
+
+.btn{
+    padding: 10px 20px;
+    background-color: rgb(183, 116, 0);
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    margin-top: 60px;
+    transition: 0.4s;
+}
+
+.form-control:hover{
+   background-color: rgba(106, 0, 104, 0.554);
+    color: black;
+}
+.form-control:active{
+    background-color: rgb(183, 116, 0);
+    border: 1px white solid;
+}
+.btn:hover{
+    background-color: rgba(106, 0, 104, 0.554);
+}
+
+
+/*pricingsection*/
+.Pricingsection-collection{
+    margin: 20px 150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.Pricingsection-heading{
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.Pricingsection-heading h1{
+    font-weight: 800;
+}
+
+.Pricingsection-card{
+    border: 1px rgb(0, 102, 94) solid;
+    width: 320px;
+    height: fit-content;
+    margin-right: 15px;
+}
+
+.Pricingsection-card2{
+    margin-bottom: 10px;
+}
+
+.Pricingsection-card-upper{
+    display: block;
+    margin: 20px 50px 10px 50px;
+    text-align: center;
+    height: 320px;
+}
+
+.Pricingsection-card-upper h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 20px 0px;
+    color: rgb(0, 102, 94);
+}
+.Pricingsection-card-upper h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: rgb(231, 115, 6);
+}
+.Pricingsection-card-upper p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 30px;
+    color: rgb(0, 102, 94) ;
+}
+
+.Pricingsection-card-upper h5{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.Pricingsection-card-upper button{
+    background-color: rgb(0, 102, 94);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 70px;
+    margin-bottom: 20px;
+}
+
+.Pricingsection-card-lower{
+    background-color: rgb(0, 102, 94);
+    height: 200px;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px rgb(0, 102, 94)  solid;
+}
+.Pricingsection-card-lower p{
+    color: #e8e8e8;
+}
+/*Presonnel Trainer*/
+
+
+#personelTrainer{
+   
+    background-color: rgb(76, 76, 76);
+    width: 100%;
+    height: 100%;
+}
+
+.personelTrainer-heading{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+
+.personelTrainer-heading h1{
+    font-weight: 800;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 45px;
+}
+
+.personelTrainer-collection-out{
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    position: relative;
+}
+
+.personelTrainer-collection-in{
+    display: block;
+    
+}
+
+.personelTrainer-card{
+    width: 60%;
+    height: 400px;
+    background-color: #fff;
+    border: 2px black solid;
+    margin-left: 20%;
+    display: flex;
+    margin-bottom: 50px;
+   
+}
+.personelTrainer-card-left{
+    width: 30%;
+    margin: 15px;
+}
+
+.personelTrainer-card-right{
+    width: 70%;
+    margin: 15px;
+    display: block;
+}
+.personelTrainer-card-right-top{
+    margin-bottom: 180px;
+    
+}
+
+.personelTrainer-card-right-top h1{
+    font-size: 30px;
+}
+
+.personelTrainer-card-right-under{
+    display: flex;
+}
+.personelTrainer-card-right-under i{
+    padding-left: 15px;
+    padding-right: 10px;
+}
+.personelTrainer-card-right-under button{
+    border: none;
+    color: #fff;
+    background-color: rgb(0, 102, 94);
+    padding: 0px 30px;
+    height: 50px;
+    margin-left: 15px;
+}
+
