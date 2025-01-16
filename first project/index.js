@@ -220,5 +220,5 @@ passport.deserializeUser((user, cb) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
