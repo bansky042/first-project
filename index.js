@@ -28,6 +28,10 @@ app.use(session(
 app.use(passport.initialize());
 app.use(passport.session());
 
+const db = new pg.Client({
+  connectionString: process.env.DATABASE_URL,
+});
+
 const createTable = async () => {
   const createTableQuery = `
     CREATE TABLE IF NOT EXISTS users (
@@ -49,13 +53,6 @@ const createTable = async () => {
 // Call the function to create the table
 createTable();
 
-const db = new pg.Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-});
 db.connect();
 
 app.get("/", (req, res) => {
