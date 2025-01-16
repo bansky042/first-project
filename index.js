@@ -1,10 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-import bcrypt, { hash } from "bcrypt";
+import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,16 +28,35 @@ app.use(session(
 app.use(passport.initialize());
 app.use(passport.session());
 
+const createTable = async () => {
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS users (
+      id SERIAL PRIMARY KEY,
+      email VARCHAR(255) UNIQUE NOT NULL,
+      password VARCHAR(255) NOT NULL,
+      phonenumber VARCHAR(15) NOT NULL
+    );
+  `;
+
+  try {
+    await db.query(createTableQuery);
+    console.log("Users table created successfully.");
+  } catch (error) {
+    console.error("Error creating users table:", error);
+  }
+};
+
+// Call the function to create the table
+createTable();
 
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "practice",
-  password: "bansky@100",
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
 db.connect();
-
 
 app.get("/", (req, res) => {
   res.render("index2.ejs");
@@ -63,7 +85,6 @@ app.get("/login", (req,res) => {
 app.get("/register", (req,res) => {
   res.render("register.ejs");
 });
-
 
 app.get("/index", (req, res) => {
   console.log(req.user);
@@ -95,53 +116,34 @@ app.post("/login", passport.authenticate("local", {
 app.post("/forgottenpassword", async (req, res) => {
   const email = req.body.username;
   const phoneNumber = req.body.phoneNumber;
-   const newPassword = req.body.newPassword;
-  
+  const newPassword = req.body.newPassword;
 
-try {
-  const result = await db.query("SELECT * FROM users WHERE email = $1",  [
-    email,
-  ]);
+  try {
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
 
-  if (result.rows.length > 0) {
-    const user = result.rows[0];
-    const storedPhoneNumber = user.phonenumber;
-      
-      
-        if (phoneNumber === storedPhoneNumber) {
-      
-         bcrypt.hash(newPassword, saltRounds, async (err, hash) => {
+    if (result.rows.length > 0) {
+      const user = result.rows[0];
+      const storedPhoneNumber = user.phonenumber;
 
+      if (phoneNumber === storedPhoneNumber) {
+        bcrypt.hash(newPassword, saltRounds, async (err, hash) => {
           if (err) {
             console.error("Error hashing password:", err);
           } else {
             console.log("Hashed Password:", hash);
-
-            await db.query("UPDATE users SET password = $1 WHERE email = $2",  [
-              hash, email,
-            ]);
-           
+            await db.query("UPDATE users SET password = $1 WHERE email = $2", [hash, email]);
             res.render("index.ejs");
           }
-
-         }); 
-          
-          
-          
-       } else {
-
-         res.send("incorrect phone number or email");
-
-       };
-   
-  } else {
-    res.send("phone number incorrect");
+        });
+      } else {
+        res.send("incorrect phone number or email");
+      }
+    } else {
+      res.send("phone number incorrect");
+    }
+  } catch (error) {
+    console.log(error);
   }
-} catch (error) {
-  console.log(error);
-}
-
-
 });
 
 app.post("/register", async (req, res) => {
@@ -150,27 +152,19 @@ app.post("/register", async (req, res) => {
   const phoneNumber = req.body.phoneNumber;
 
   try {
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1",  [
-      email,
-    ]);
+    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [email]);
 
     if (checkResult.rows.length > 0) {
       res.send("Email already exists. Try logging in.");
     } else {
-      //hashing the password and saving it in the database
       bcrypt.hash(password, saltRounds, async (err, hash) => {
         if (err) {
           console.error("Error hashing password:", err);
         } else {
           console.log("Hashed Password:", hash);
-          await db.query(
-            "INSERT INTO users (email, password, phoneNumber) VALUES ($1, $2, $3)",
-            [email, hash, phoneNumber,
-
-          ]);
+          await db.query("INSERT INTO users (email, password, phoneNumber) VALUES ($1, $2, $3)", [email, hash, phoneNumber]);
           res.render("index.ejs");
           console.log(email);
-          
           console.log(phoneNumber);
         }
       });
@@ -180,16 +174,10 @@ app.post("/register", async (req, res) => {
   }
 });
 
-
-
-passport.use(new Strategy(async function verify(username, password, cb){
-console.log(username);
-
-
+passport.use(new Strategy(async function verify(username, password, cb) {
+  console.log(username);
   try {
-    const result = await db.query("SELECT * FROM users WHERE email = $1", [
-      username,
-    ]);
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [username]);
     if (result.rows.length > 0) {
       const user = result.rows[0];
       const storedHashedPassword = user.password;
@@ -211,6 +199,7 @@ console.log(username);
     return cb(err);
   }
 }));
+
 passport.serializeUser((user, cb) => {
   cb(null, user);
 });
