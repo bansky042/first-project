@@ -7,7 +7,7 @@ import { Strategy } from "passport-local";
 import session from "express-session";
 
 const app = express();
-const port = 3000;
+const port = process.env || 3000;
 const saltRounds = 10;
 
 app.use(bodyParser.urlencoded({ extended: true }));
