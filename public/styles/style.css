@@ -6,168 +6,337 @@
     
 }
 /**/
-@media only screen and (min-width:320px) and (max-width:600px) {
-   body{
-    font-size: 20px !important;
-    min-width: 100% !important;
-   }
-/*navbar*/
-   .navbar{
-    width: 560px !important;
-   }
-
-    .hambuger{
-        display: block !important;
-       margin-left: -20px !important;
-       margin-top: 10px !important;
-       border: none;
-       background-color: transparent;
-       cursor: pointer;
+@media (max-width: 780px) {
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        bottom: 0;
+        left: 50%;
+        background: #da4619;
+        transition: .5s;
     }
 
-    .hambuger span{
-        width: 30px !important;
-        height: 1px !important;
-        background-color: #fff !important;
-        margin-bottom: 5px;
-        transition: 0.3s;
-    }
-    
-    .hambuger.active span:nth-child(2) {
-        opacity: 0;
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: 100%;
+        left: 0;
     }
 
-    .hambuger.active span:nth-child(1){
-        transform: translateY(12px) rotate(45deg);
+    .span{
+        color: #e8e8e8 !important;
+    }
+
+    /*firstsection*/
+
+.firstsection{
+        width: 100% !important;
+        text-align: center !important;
         
     }
 
-    .hambuger.active span:nth-child(3){
-        transform: translate(-1px) rotate(-45deg);
+    .text-firstsection{
+        text-align: center !important;
+        display: block !important;
+        border: 1px solid black !important;
+
+    }
+    .button-firstsection{
+   
+        top: 78% !important;
+        left: 40% !important;
     }
 
-    .menu{
-        position: fixed;
-        right: 100%;
-        top: 60px;
-        flex-direction: column;
-        background-color:rgb(38, 38, 40);
-        width: 100%;
-        height: 100% !important;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
+    .text-firstsection h1{
+        top: 35% !important;
+        left: 16% !important;
+        
+    }
+    .text-firstsection h2{
+  
+        top: 50% !important;
+        left: 25% !important;
+        
     }
 
-    .menu.active{
-        right: 0;  
-    }
+    /*second section*/
+    .secondsection{
+        width: 100% !important;
+        display: block !important;
+        margin-top: 40px !important;
+        }
 
-    .menu li{
-        margin: 2.5rem 0;
-    }
+        .secondsection-right{
+            width: 100% !important;
+            height: auto; 
+        }
 
-    .nav-link{
-        color: #fff;
-        padding: 15px;
-        text-align: justify;
-        transition: 0.5s !important;
+    /*thirdsection*/
+.thirdsection{
+    display: block !important;
+    height: auto;
+    margin-top: 75px !important;
+    width: 100% !important;
+    
+}
+
+.thirdsection-1{
+    width: 97.7% !important;
+    min-height: 450px;
+    margin-top: 5px;
+    
+    
+}
+
+.thirdsection-2{
+    width: 97.7% !important;
+    min-height: 450px;
+    margin-top: 5px;
+}
+
+.thirdsection-3{
+    width: 97.7% !important;
+    min-height: 450px;
+    margin-top: 5px;
+}
+
+.thirdsection-4{
+    width: 97.7% !important;
+    min-height: 450px;
+    margin-top: 5px;
+    
+}
+      
+/*fourthsection*/
+.fourthsection{
+    display: block !important;
+    
+}
+.fourthsection-left{
+    width: 100% !important;
+}
+
+.fourthsection-left-heading{
+    margin: 20px 50px !important;
+    text-align: center;
+}
+
+.fourthsection-left-heading h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px !important;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.fourthsection-left-heading p{
+    color: rgb(131, 129, 129);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 25px !important;
+}
+
+.fourthsection-right{
+    width: 97.5% !important;
+}
+ /*fifthsection*/
+.fifthsection-team{
+    display: block !important;
+    width: 100% !important;
+    
+}
+
+.fifthsection-player{
+    width: 96% !important;
+    height: auto;
+    margin-bottom: 10px !important;  
+}
+    
+/*sixthsection*/
+.sixthsection{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important; 
+   
+
+}
+
+.sixthsection-left{
+    width: 100% !important;
+    padding-top: 70px !important;
+}
+
+.sixthsection-left-single{
+    margin-left: -120px !important;
+    margin-bottom: 100px;
+}
+
+.sixthsection-right{
+    width: 100% !important; 
+}
+
+.sixthsection-button{
+    margin-bottom: 50px !important;
+    margin-left: 160px !important;
+}
+
+
+/*seventhsection*/
+.seventhsection{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    
+}
+
+.seventhsection-single{
+    width: 100% !important;
+    text-align: center;
+   
+
+}
+
+
+.seventhsection-single-text p{
+    line-height: 30px !important;
+    
+}
+
+/*eightsection*/
+.eightsection-ca{
+    display: block !important;
+    right: 140px !important;
+    
+    
+}
+.eightsection-card{
+    margin-top: 40px !important;
+}
+
+.ninthsection{
+    display: block !important;
+    
+}
+
+.ninthsection-left{
+    width: 100% !important;
+    right: 60px !important;
+    bottom: 40px !important;
+}
+.ninthsection-left h2{
+    padding-right: 100px !important;
+    margin-bottom: 100px !important;
+}
+
+.ninthsection-left button{
+  margin-bottom: 100px !important;
+}
+
+.ninthsection-right{
+    width: 100% !important;
+    text-align: left;
+    display: block !important;
+    right: 100px !important;
+    bottom: 150px !important;
+    
+}
+
+.ninthsection-right ul li{
+    text-wrap: nowrap !important;
+}
+
+/*tenthsection*/
+.tenthsection{
+    width: 100% !important;
+    margin-top: 100px !important;
+    
+}
+.tenthsection-text{
+   
+}
+.tenthsection h2{
+     font-size: 60px !important;
+}
+   
+
+.tenthsection h3{
+     font-size: 45px !important;
+   
+}
+
+/*footer*/
+footer{
+      height: 350px !important;
+    width: 100% !important;
+
+}
+
+.footer-left{
+
+   left: 20px !important;
+    
+}
+
+.footer-right{
+    margin-left: 210px !important;
+    
+    
+}
+
+/*login page*/
+
+.container2{
+    left: 0% !important;
+    height: 450px !important;
+}
+
+.container-text{
+    margin-left: 60px !important;
+}
+
+.form-control{
+    margin-bottom: 20px !important;
+}
+
+.btn{
+    margin-bottom: 10px !important;
+}
+
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-left: 0;
+        padding: 10px 0;
     }
 }
 
 /*main screen*/
 
 /*navbar section*/
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: fit-content;
-    padding: 10px 30px;
-    background-color: rgb(38, 38, 40);
-    top: 0;
-    z-index: 100;
-    width:100%;
+.navbar a h1{
+    color:#e8e8e8 ;
+}
+.bar{
+    background-color: #2c2c2d;
 }
 
-.logo{
-    width: 20%;
-    height: 24px;
-    padding: 15px;
-}
-.menu{
-    text-decoration: none;
-    display: flex;
-    list-style: none;
-}
-
-header{
-
-    top: 0;
-    z-index: 100;
-}
-
-.nav-link{
-    padding: 10px;
-    color: white;
-    transition: 0.5s;
-    text-decoration: none;
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Jost', sans-serif;
     position: relative;
-    margin-left: 40px;
+    margin-left: 30px;
+    padding: 30px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #e8e8e8;
+    outline: none;
+    transition: .5s;
 }
 
-.menu li svg:hover{
-    color: black;
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #e8e8e8;
 }
-
-.nav-link a{
-    position: absolute;
-    top: 30px;
-}
-.nav-link button{
-    position: absolute;
-    top: 20px;
-}
-
-header h1{
-    color: white;
-}
-
-.nav-link:hover{
-    background-color:white;
-    color: black;
-    
-}
-
-.hambuger{
-    position: absolute;
-    top: 17px;
-    left:540px;
-    display: none;
-    background-color: none;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 30px;
-    height: 20px;
-    border-radius: 0%;
-}
-
-.hambuger span{
-    height: 1px;
-    width: 100%;
-    display: block;
-    background-color: #fff;
-}
-.menu li button{
-    background-color: white;
-    margin-bottom: -5px;
-    padding: 5px 25px;
-    border: none;
-    color: black;
-    
-   
-}
-
 
 /*firstsection*/
 
@@ -182,17 +351,22 @@ header h1{
 }
 
 .text-firstsection{
-    position: absolute;
-    top: 35%;
-    left: 40%;
+    text-align: center;
+    
 }
 
 .text-firstsection h1{
+    position: absolute;
+    top: 34%;
+    left: 39%;
     color: white;
     font-size: 75px;
     font-family: sans-serif;
 }
 .text-firstsection h2{
+    position: absolute;
+    top: 50%;
+    left: 42%;
     color: white;
     font-size: 50px;
     font-family: monospace;
@@ -202,7 +376,7 @@ header h1{
 .button-firstsection{
     position: absolute;
     top: 78%;
-    left: 48%;
+    left: 45%;
 }
 
 .button-firstsection button {
@@ -261,6 +435,7 @@ text-align: center;
     background-repeat: no-repeat;
     width: 25%;
     min-height: 640px;
+    margin-left: 5px;
    
 }
 
@@ -438,12 +613,12 @@ text-align: center;
 
 .sixthsection-left{
     width: 50%;
-    margin: 70px 15px 0px 0px;
+    margin-top: 70px;
 
 }
 
 .sixthsection-left-single{
-    margin-left: 150px;
+    padding-left: 150px;
     position: relative;
     margin-bottom: 100px;
 }
@@ -459,6 +634,7 @@ text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
     top: 100px;
+    left: 200px;
     color:#fff;
     
 }
@@ -470,12 +646,13 @@ text-align: center;
     font-size: 30px;
     position: absolute;
     top: 20px;
-    left: 120px;
+    left: 250px;
    
 }
 
 .sixthsection-right{
     width: 50%;
+    position: relative;
     
 }
 .sixthsection-right p{
@@ -483,7 +660,7 @@ text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 900;
     color: #fff;
-    margin: 200px 400px 200px 100px;
+    margin-top: 300px;
     line-height: 90px;
 }
 
@@ -492,9 +669,11 @@ text-align: center;
     color: #fff;
     border: none;
     padding: 15px 30px;
-    margin-left: 250px;
+    margin-top: 100px;
+    margin-left: 280px;
     transition: 0.5s;
     border-radius: 10px;
+    
 }
 .sixthsection-button:hover{
     background-color: rgba(192, 70, 5, 0.473);
@@ -507,7 +686,7 @@ text-align: center;
     display: flex;
     width: auto;
     height: 800px;
-    margin: 50px 20px 30px 20px;
+    padding: 50px 20px 30px 20px;
     
 }
 
@@ -539,8 +718,13 @@ text-align: center;
 
 /*eightsection*/
 .eightsection{
+    
+    padding: 50px 200px;
+}
+
+.eightsection-ca{
     display: flex;
-    margin: 50px 200px;
+    position: relative;
 }
 .eightsection-card{
     border: 2px rgb(0, 102, 94) solid;
@@ -548,6 +732,7 @@ text-align: center;
     width: 320px;
     height: fit-content;
     margin-right: 15px;
+    
 }
 .eightsection-card-upper{
     display: block;
@@ -608,6 +793,7 @@ text-align: center;
 .ninthsection-left{
     display: block;
     width: 30%;
+    position: relative;
 }
 .ninthsection-left h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -624,12 +810,14 @@ text-align: center;
     border: none;
     border-radius: 15px;
     padding: 10px 30px;
+    
 }
 .ninthsection-right{
     width: 70%;
     height: 500px;
     text-align: left;
     display: flex;
+    position: relative;
     
 }
 
@@ -647,6 +835,7 @@ text-align: center;
     
 }
 
+/*tenthsection*/
 .tenthsection{
     background-image: linear-gradient(to right,rgba(106, 0, 104, 0.554), rgba(192, 70, 5, 0.473)),url(../images/gym18.jpg);
     background-position: center;
@@ -654,17 +843,18 @@ text-align: center;
     background-repeat: no-repeat;
     text-align: center;
     height: 600px;
+    padding-top: 200px;
     position: relative;
-    margin-bottom: -120px;
+    top: 120px;
+    
 }
+
+
 
 .tenthsection h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 100px;
     font-weight: 800;
-    position: absolute;
-    left: 21%;
-    top: 100px;
     color: white;
 }
 
@@ -672,9 +862,6 @@ text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 70px;
     font-weight: 800;
-    position: absolute;
-    left: 25%;
-    top: 300px;
     color: white;
     
 }
@@ -761,7 +948,6 @@ footer{
 .container2{
     width: 500px;
     height: 400px;
-   
     position: absolute;
     top: 240%;
     left: 31%;
