@@ -242,6 +242,7 @@
 
 .ninthsection-right ul li{
     text-wrap: nowrap !important;
+    text-transform: uppercase !important;
 }
 
 /*tenthsection*/
@@ -250,9 +251,7 @@
     margin-top: 100px !important;
     
 }
-.tenthsection-text{
-   
-}
+
 .tenthsection h2{
      font-size: 60px !important;
 }
