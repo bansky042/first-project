@@ -37,22 +37,31 @@
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/tempusdominus/js/moment.min.js"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/index2.js"></script>
 <script>
-    const hamburger = document.querySelector(".hambuger");
-const navMenu = document.querySelector(".menu");
-const navLink = document.querySelectorAll(".nav-link");
+   // Add event listeners to navbar links
+document.addEventListener('DOMContentLoaded', function () {
+   const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener("click", mobileMenu);
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+   navLinks.forEach(link => {
+       link.addEventListener('click', function () {
+           // Remove 'active' class from all links
+           navLinks.forEach(navLink => navLink.classList.remove('active'));
 
-function mobileMenu() {
-    hamburger.classList.toggle ("active");
-    navMenu.classList.toggle ("active");
-}
-
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
+           // Add 'active' class to the clicked link
+           this.classList.add('active');
+       });
+   });
+});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
